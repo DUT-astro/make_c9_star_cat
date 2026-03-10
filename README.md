@@ -93,3 +93,32 @@ Processing Chip 30/30 ...
 python csv_to_c9h5.py --csv stars_grid_40_40_90_20_ccd13_minimal.csv --out ./stars_grid_40_40_90_20_ccd13_minimal.h5      
 [OK] Wrote 624000 rows into 13 HEALPix groups in ./stars_grid_40_40_90_20_ccd13_minimal.h5
 ```
+
+## 6) Make simi-artificial galaxy catalogue:
+```
+python make_galaxy_patch_catalog.py \
+  --in-h5 "/sharefiles1/CSSTSim_C9_o/galaxycat_C9/cat2CSSTSim_bundle-50sqDeg/galaxies_C6*.h5" \
+  --out-csv ./ga_test_01.csv \
+  --ra-center 90 \
+  --dec-center 20 \
+  --radius-deg 0.6 \
+  --n-gal 200000 \
+  --seed 20260310
+[Info] Input files = 38
+[Info] Output CSV  = ./ga_test_01.csv
+[Info] Patch center (RA,Dec)=(90.0,20.0) deg | radius=0.6 deg
+[Info] N_gal = 200000 | seed=20260310
+[Info] Loaded pool size = 127488185
+[Info] Total output columns = 49
+[Done] Wrote 200000 rows to ./ga_test_01.csv
+```
+*
+```
+ python csv_to_c9_galaxies_h5.py --csv ./ga_test_01.csv  --out ./ga_test_01.h5       
+Wrote bundle file: ./ga_test_01.h5/galaxies_C6_bundle000944.h5
+Wrote bundle file: ./ga_test_01.h5/galaxies_C6_bundle001007.h5
+Wrote bundle file: ./ga_test_01.h5/galaxies_C6_bundle001008.h5
+Wrote bundle file: ./ga_test_01.h5/galaxies_C6_bundle001072.h5
+Done.
+```
+
