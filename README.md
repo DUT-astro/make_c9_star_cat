@@ -122,3 +122,28 @@ Wrote bundle file: ./ga_test_01.h5/galaxies_C6_bundle001072.h5
 Done.
 ```
 
+## 6.5)
+```
+python make_galaxy_chip_catalog_scaled.py \
+  --in-h5 "/sharefiles1/CSSTSim_C9_o/galaxycat_C9/cat2CSSTSim_bundle-50sqDeg/galaxies_C6*.h5" \
+  --out-csv ./ga_test_05_poisson.csv \
+  --ra-center 9.0 \
+  --dec-center 20.0 \
+  --n-per-chip 2000 \
+  --p-clust 0.3 \  
+  --sep-scale 0.8 \                  
+  --seed 2026 --size-scale 4 --coeff-scale 20
+  ```
+
+## 7) Make star field with poisson distribution
+```
+ python make_Fov_poisson_catalog.py \
+    --nstar-per-chip 10000 \                               
+    --edge 0 \
+    --ra0 90 \
+    --dec0 20 \
+    --theta -120 \
+    --seed 202603 \
+    --out stars_poisson_all_chips.csv   
+```
+
