@@ -147,3 +147,4 @@ python make_galaxy_chip_catalog_scaled.py \
     --out stars_poisson_all_chips.csv   
 ```
 
+#
